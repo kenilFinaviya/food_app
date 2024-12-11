@@ -11,7 +11,7 @@ const Section4 = () => {
             <Col lg={6} className="text-center mb-5 mb-lg-0">
               <img
                 src={PromotionImage}
-                className="image-fluid w-100"
+                className="image-fluid w-100 "
                 alt="Promotion"
               />
             </Col>
