@@ -11,6 +11,7 @@ import Image8 from "../../Food_Assets/assets/menu/burger-18.jpg";
 import Cards from "../../components/Layouts/Cards";
 import { Link } from "react-router-dom";
 
+// Mock Data Cards
 const mockData = [
   {
     id: "0001",
@@ -79,6 +80,7 @@ const mockData = [
   // Add more mock data objects as needed
 ];
 
+// Rating Logical Data
 const renderRatingIcons = (rating) => {
   const stars = [];
 
@@ -96,7 +98,7 @@ const renderRatingIcons = (rating) => {
   return stars;
 };
 
-const Section3 = () => {
+function Section3() {
   return (
     <section className="menu_section">
       <Container>
@@ -124,16 +126,17 @@ const Section3 = () => {
         </Row>
 
         <Row className="pt-5">
-          <Col className="ads_box ads_img1 mb-5 mb-md-0">
-            <h4 className="mb-0"> GET YOUR FREE</h4>
-            <h5>CHEESE FRIES</h5>
-            <Link to="/" className="btn btn_red px-4 rounded-0">
-              Learn More
-            </Link>
+          <Col sm={6} lg={5}>
+            <div className="ads_box ads_img1 mb-5 mb-md-0">
+              <h4 className="mb-0">GET YOUR FREE</h4>
+              <h5>CHEESE FRIES</h5>
+              <Link to="/" className="btn btn_red px-4 rounded-0">
+                Learn More
+              </Link>
+            </div>
           </Col>
           <Col sm={6} lg={7}>
             <div className="ads_box ads_img2">
-              {" "}
               <h4 className="mb-0">GET YOUR FREE</h4>
               <h5>CHEESE FRIES</h5>
               <Link to="/" className="btn btn_red px-4 rounded-0">
@@ -145,6 +148,6 @@ const Section3 = () => {
       </Container>
     </section>
   );
-};
+}
 
 export default Section3;

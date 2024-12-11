@@ -13,10 +13,10 @@ const Home = () => {
   return (
     <>
       <Layout>
-        {/* home section hero banner */}
+        {/* Home Section Hero Banner */}
         <Section1 />
 
-        {/* home section about */}
+        {/* Home Section About */}
         <Section2 />
 
         {/* Home Section Menu */}

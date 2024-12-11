@@ -25,7 +25,7 @@ const mockData = [
   // Add more mock data objects as needed
 ];
 
-const Section2 = () => {
+function Section2() {
   return (
     <>
       <section className="about_section">
@@ -49,17 +49,17 @@ const Section2 = () => {
         <Container>
           <Row className="justify-content-md-center">
             {mockData.map((cardData, index) => (
-              <Col md={6} lg={4} className="mb-4 mb-md-0 " key={index}>
+              <Col md={6} lg={4} className="mb-4 mb-md-0" key={index}>
                 <div className="about_box text-center">
                   <div className="about_icon">
                     <img
                       src={cardData.image}
-                      className="img_fluid"
+                      className="img-fluid"
                       alt="icon"
                     />
-                    <h4>{cardData.title}</h4>
-                    <p>{cardData.paragraph}</p>
                   </div>
+                  <h4>{cardData.title}</h4>
+                  <p>{cardData.paragraph}</p>
                 </div>
               </Col>
             ))}
@@ -68,6 +68,6 @@ const Section2 = () => {
       </section>
     </>
   );
-};
+}
 
 export default Section2;

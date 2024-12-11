@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
-import "../../styles/HeaderStyle.css";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../Food_Assets/assets/logo/logo.png";
+import "../../styles/HeaderStyle.css";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
 
+  // Scroll Navbar
   const changeValueOnScroll = () => {
     const scrollValue = document?.documentElement?.scrollTop;
     scrollValue > 100 ? setNav(true) : setNav(false);
@@ -50,7 +51,7 @@ const Header = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/">
                 <div className="cart">
-                  <i className="bi bi-bag fs-5"></i>
+                  <i class="bi bi-bag fs-5"></i>
                   <em className="roundpoint">2</em>
                 </div>
               </Nav.Link>

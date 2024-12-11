@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+function Footer() {
+  // Scroll State
   const [isVisible, setIsVisible] = useState(false);
-
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -13,17 +13,16 @@ const Footer = () => {
   };
 
   const listenToScroll = () => {
-    let hightToHidden = 250;
+    let heightToHidden = 250;
     const windowScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
-    windowScroll > hightToHidden ? setIsVisible(true) : setIsVisible(false);
+    windowScroll > heightToHidden ? setIsVisible(true) : setIsVisible(false);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
   });
-
   return (
     <>
       <footer>
@@ -50,8 +49,8 @@ const Footer = () => {
                 <h5>Order Now</h5>
                 <p>Quaerat neque purus ipsum</p>
                 <p>
-                  <Link to="tel:9998887777" className="calling">
-                    999-888-7777
+                  <Link to="tel:9099946540" className="calling">
+                    909-994-6540
                   </Link>
                 </p>
               </div>
@@ -91,7 +90,7 @@ const Footer = () => {
                 <ul className="list-unstyled text-center mb-0">
                   <li>
                     <Link to="/">
-                      © 2024 <span>KENILFINAVIYA</span>. All Rights Reserved
+                      © 2023 <span>CODE4EDUCATION</span>. All Rights Reserved
                     </Link>
                   </li>
                   <li>
@@ -118,6 +117,6 @@ const Footer = () => {
       )}
     </>
   );
-};
+}
 
 export default Footer;

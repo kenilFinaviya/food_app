@@ -1,7 +1,7 @@
 /* Home Hero 1.0 */
 .hero_section {
   position: relative;
-  background: url("../Food_Assets/assets/hero/hero-1.jpg") no-repeat center
+  background: url("../Food_Assets/assets/hero/hero-1.jpg    ") no-repeat center
     center;
   background-size: cover;
   background-attachment: fixed;
@@ -278,13 +278,13 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
-  margin-bottom: 25px;
   border-radius: 100%;
+  margin-bottom: 25px;
 }
 .blog_section .carousel.slide .carousel-inner .carousel-caption p {
   font-size: 1.7rem;
-  font-weight: 400;
   line-height: 1.45;
+  font-weight: 400;
   padding: 0 12%;
   margin-bottom: 25px;
 }
@@ -303,12 +303,12 @@
     center;
   background-size: cover;
   padding-top: 100px;
-  padding-bottom: 25px;
+  padding-bottom: 100px;
 }
 .contact_section h4 {
   font-size: 2.375rem;
-  margin-bottom: 25px;
   font-weight: 400;
+  margin-bottom: 25px;
 }
 .contact_section h2 {
   font-size: 4.5rem;
@@ -399,6 +399,7 @@ footer .copy_right ul li:last-child:after {
   .promotion_section h2 {
     font-size: 2.25rem;
   }
+
   /* Home Contact 8.0 */
   .contact_section h2 {
     font-size: 3.5rem;
@@ -452,7 +453,9 @@ footer .copy_right ul li:last-child:after {
     width: 70px;
     height: auto;
   }
-  .blog_section .carousel.slide .carousel-inner .carousel-caption {
+
+  /* Home Blog 7.0 */
+  .blog_section .carousel.slide .carousel-inner .carousel-caption p {
     font-size: 1rem;
   }
 }
