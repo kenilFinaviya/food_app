@@ -6,12 +6,12 @@ const Section4 = () => {
   return (
     <>
       <section className="promotion_section">
-        <Container>
+        <Container className="section-4">
           <Row className="align-item-center">
             <Col lg={6} className="text-center mb-5 mb-lg-0">
               <img
                 src={PromotionImage}
-                className="image-fluid"
+                className="image-fluid w-100"
                 alt="Promotion"
               />
             </Col>

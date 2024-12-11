@@ -51,7 +51,7 @@ const Header = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/">
                 <div className="cart">
-                  <i class="bi bi-bag fs-5"></i>
+                  <i className="bi bi-bag fs-5"></i>
                   <em className="roundpoint">2</em>
                 </div>
               </Nav.Link>

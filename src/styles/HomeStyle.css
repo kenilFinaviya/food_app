@@ -428,14 +428,19 @@ footer .copy_right ul li:last-child:after {
   }
 }
 
+.section-4{
+box-sizing: border-box;
+}
+
 @media (max-width: 767px) {
   /* Home Hero 1.0 */
+
   .hero_section .hero_text h1 {
     font-size: 5.5rem;
   }
 
   /* Home Menu 3.0 */
-  .menu_section .para {
+  .menu_section .para { 
     padding: 10px 0px;
   }
 
