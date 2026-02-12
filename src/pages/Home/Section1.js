@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Burger from "../../Food_Assets/assets/hero/hero-2.png";
-import { Link } from "react-router-dom";
+import Button from "../../components/ui/Button";
 
-const Section1 = () => {
+function Section1() {
   return (
     <section className="hero_section">
       <Container>
@@ -28,15 +28,13 @@ const Section1 = () => {
                 viverra tortor in iaculis pretium at magna mauris ipsum primis
                 rhoncus feugiat
               </p>
-              <Link to="/" className="btn order_now">
-                Order Now
-              </Link>
+              <Button>Order Now</Button>
             </div>
           </Col>
         </Row>
       </Container>
     </section>
   );
-};
+}
 
 export default Section1;

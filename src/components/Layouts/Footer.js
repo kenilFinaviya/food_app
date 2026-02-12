@@ -1,28 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../common/ScrollToTop";
 
 function Footer() {
-  // Scroll State
-  const [isVisible, setIsVisible] = useState(false);
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const listenToScroll = () => {
-    let heightToHidden = 250;
-    const windowScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    windowScroll > heightToHidden ? setIsVisible(true) : setIsVisible(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-  });
   return (
     <>
       <footer>
@@ -49,9 +30,9 @@ function Footer() {
                 <h5>Order Now</h5>
                 <p>Quaerat neque purus ipsum</p>
                 <p>
-                  <Link to="tel:9099946540" className="calling">
+                  <a href="tel:9099946540" className="calling">
                     909-994-6540
-                  </Link>
+                  </a>
                 </p>
               </div>
             </Col>
@@ -109,12 +90,7 @@ function Footer() {
         </Container>
       </footer>
 
-      {/* Sroll To Top */}
-      {isVisible && (
-        <div className="scroll_top" onClick={scrollTop}>
-          <i className="bi bi-arrow-up"></i>
-        </div>
-      )}
+      <ScrollToTop />
     </>
   );
 }

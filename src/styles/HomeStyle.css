@@ -1,7 +1,7 @@
 /* Home Hero 1.0 */
 .hero_section {
   position: relative;
-  background: url("../Food_Assets/assets/hero/hero-1.jpg    ") no-repeat center
+  background: url("../Food_Assets/assets/hero/hero-1.jpg") no-repeat center
     center;
   background-size: cover;
   background-attachment: fixed;

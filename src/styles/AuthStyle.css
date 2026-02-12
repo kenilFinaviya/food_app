@@ -1,0 +1,119 @@
+/* Auth Pages - Login & Signup */
+
+.auth_section {
+  padding: 80px 0 100px;
+  min-height: 60vh;
+  background: var(--light-grey);
+}
+
+.auth_card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.auth_title {
+  font-size: 2rem;
+  color: var(--light-black);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.auth_subtitle {
+  color: var(--grey);
+  text-align: center;
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+
+.auth_card .form-label {
+  font-weight: 500;
+  color: var(--light-black);
+}
+
+.auth_card .form-control {
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+}
+
+.auth_card .form-control:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 0.2rem rgba(247, 190, 39, 0.25);
+}
+
+.auth_footer {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: var(--grey);
+}
+
+.auth_footer a {
+  color: var(--light-red);
+  font-weight: 600;
+}
+
+.auth_footer a:hover {
+  color: var(--light-black);
+}
+
+/* Header auth buttons */
+.header_auth_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--oswald-font);
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.header_login_btn {
+  background: transparent;
+  border: 2px solid var(--light-red);
+  color: var(--light-red);
+}
+
+.header_login_btn:hover {
+  background: var(--light-red);
+  color: var(--white);
+  border-color: var(--light-red);
+}
+
+.header_logout_btn {
+  background: var(--light-red);
+  border: 2px solid var(--light-red);
+  color: var(--white);
+}
+
+.header_logout_btn:hover {
+  background: transparent;
+  color: var(--light-red);
+  border-color: var(--light-red);
+}
+
+.header_user_info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.header_user_info .user_name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .header_auth_btn,
+  .header_user_info {
+    margin-top: 0.5rem;
+  }
+}

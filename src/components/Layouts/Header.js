@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../Food_Assets/assets/logo/logo.png";
+import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 import "../../styles/HeaderStyle.css";
+import "../../styles/AuthStyle.css";
 
-const Header = () => {
-  const [nav, setNav] = useState(false);
+const SCROLL_THRESHOLD = 100;
+const LIGHT_HEADER_PATHS = ["/login", "/signup"];
 
-  // Scroll Navbar
-  const changeValueOnScroll = () => {
-    const scrollValue = document?.documentElement?.scrollTop;
-    scrollValue > 100 ? setNav(true) : setNav(false);
+function Header() {
+  const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { cartCount } = useCart();
+  const { isAuthenticated, user, logout } = useAuth();
+
+  // Use sticky (light bg, dark text) on auth pages where background is light
+  const useLightHeader = LIGHT_HEADER_PATHS.includes(location.pathname);
+  const showStickyStyle = isSticky || useLightHeader;
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
   };
 
-  window.addEventListener("scroll", changeValueOnScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollValue = document.documentElement?.scrollTop ?? 0;
+      setIsSticky(scrollValue > SCROLL_THRESHOLD);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header>
       <Navbar
         collapseOnSelect
         expand="lg"
-        className={`${nav === true ? "sticky" : ""}`}
+        className={showStickyStyle ? "sticky" : ""}
       >
         <Container>
           <Navbar.Brand href="#home">
@@ -49,10 +70,35 @@ const Header = () => {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="/">
+              {isAuthenticated ? (
+                <>
+                  <Nav.Link className="d-flex align-items-center">
+                    <span className="header_user_info">
+                      <i className="bi bi-person-circle fs-5" />
+                      <span className="user_name">{user?.name}</span>
+                    </span>
+                  </Nav.Link>
+                  <li className="nav-item">
+                    <button
+                      type="button"
+                      className="nav-link header_auth_btn header_logout_btn border-0"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <Nav.Link as={Link} to="/login" className="header_auth_btn header_login_btn text-decoration-none">
+                  Login
+                </Nav.Link>
+              )}
+              <Nav.Link as={Link} to="/cart">
                 <div className="cart">
                   <i className="bi bi-bag fs-5"></i>
-                  <em className="roundpoint">2</em>
+                  {cartCount > 0 && (
+                    <em className="roundpoint">{cartCount}</em>
+                  )}
                 </div>
               </Nav.Link>
             </Nav>
